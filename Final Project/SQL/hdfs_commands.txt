@@ -1,0 +1,56 @@
+# List all files in HDFS root folder
+hdfs dfs -ls /
+
+# List all local files in FS
+ls
+
+pwd
+
+# HDFS has 3 directories in root folder
+
+# Upload folder - right click
+
+# Create a folder called wsu
+hdfs dfs -mkdir /wsu
+
+# Ensure that wsu is created 
+hdfs dfs -ls /
+
+# Copy file from FS folder to wsu
+hdfs dfs -put ratings.csv /wsu/
+
+# Make sure the file was copied successfully
+hdfs dfs -ls /
+
+# Copy file within the same HDFS
+hdfs dfs -cp /wsu/ratings.csv /wsu/ratings2.csv 
+
+# Use get command to copy file to local FS file
+hdfs dfs -get /wsu/ratings.csv
+
+---------
+
+####### Word Count
+ls 
+hdfs dfs -mkdir /foldername/
+
+hdfs dfs -put filename.csv /foldername/.
+	
+hdfs dfs -ls /foldername
+
+hdfs dfs -put /filename2.txt 
+
+open map reduce
+
+ls /usr/lib/hadoop-
+ls /usr/lib/hadoop-mapreduce/
+
+pwd
+mkdir tmp
+
+# Copy file
+cp /usr/lib/hadoop-mapreduce/hadoop-mapreduce-examples.jar
+
+yarn jar /usr/lib/hadoop-mareduce/hadoop-mapreduce-examples.jar wordcount /wordcountfiles/ tmp/result
+
+hdfs dfs -get /tmp/result*
